@@ -1,17 +1,20 @@
 body{
-    margin: 0;
     box-sizing: border-box;
     overflow-x: hidden;
     background-color: var(--bg-color);
     color: var(--txt-color);
-    max-width: 1600px;
+    max-width: 1200px;
     position: relative;
+    margin: 0 auto;
 }
 
 :root{
-    --bg-color:#0D0D0D;
-    --txt-color:#EDE6D5;
+    --bg-color:#181824;
+    --bg-color-contraste:#242333 ;
+    --txt-color:#f8f9ff;
     --color-live: #fc0c0c;
+    --color-decoration:#884dbf;
+    --bg-color-grid:#1a192b;
 }
 
 html{
@@ -47,7 +50,6 @@ h3{
 
 .navegador{
     height: 80px;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,7 +96,6 @@ h3{
     height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 20%;
     position: relative;
     padding-left: 5%;
     gap: 10%;
@@ -116,16 +117,25 @@ h3{
     position: relative;
     line-height: 1.2;
     user-select: none;
-    background-color: #000000c0;
-    text-shadow: 1px 1px 3.5px rgba(73, 66, 66, 0.425);
-    background-image: linear-gradient(45deg, #131111, #363131);
+    color: var(--txt-color);
+
 }
 
 .inicio_links{
-    width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 16px;
+    position: absolute;
+    bottom: 20px;
+    right: 5%;
+}
+
+.inicio_links::after{
+    content: "";
+    width: 2px;
+    height: 100px;
+    background-color: var(--txt-color);
 }
 
 .inicio_dager {
@@ -189,6 +199,78 @@ h3{
     bottom: 40px;
     right: 40px;
 }
+
+.tooltip-container {
+    background: linear-gradient(138deg, rgba(3, 169, 244, 1) 15%, rgba(63, 180, 233, 1) 65%);
+    position: relative;
+    cursor: pointer;
+    font-size: 17px;
+    padding: 0.7em 0.7em;
+    border-radius: 100vmax;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    transition: background 0.6s;
+    width: 50px;
+    height: 50px;
+}
+
+.tooltip-container:hover {
+    background: #fff;
+}
+
+.tooltip-container .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: #fff;
+    transition: fill 0.6s;
+}
+
+.tooltip-container:hover .text {
+    fill: rgb(3, 169, 244);
+}
+
+.tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    background: #fff;
+    fill: #03a9f4;
+    padding: 8px; /* Reducido para que sea más compacto */
+    border-radius: 100vmax;
+    transition: opacity 0.3s ease, transform 0.5s ease, visibility 0.3s ease, background 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.tooltip-container:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tooltip1 { transform: translate(-50%, 0%); }
+.tooltip2 { transform: translate(-50%, 0); }
+.tooltip3 { transform: translate(0, -50%); }
+.tooltip4 { transform: translate(60%, -50%); }
+
+.tooltip-container:hover .tooltip1 { transform: translate(-50%, -190%); }
+.tooltip-container:hover .tooltip2 { transform: translate(-50%, 90%); }
+.tooltip-container:hover .tooltip3 { transform: translate(-190%, -50%); }
+.tooltip-container:hover .tooltip4 { transform: translate(90%, -50%); }
+
+/* Hover Effect */
+.tooltip:hover {
+    background: #03a9f4;
+    fill: #fff;
+}
+
 
 /* ANIMACIONES */
 
