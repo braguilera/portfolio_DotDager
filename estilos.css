@@ -1,20 +1,101 @@
-/* Inicio */
-
 body{
     margin: 0;
     box-sizing: border-box;
     overflow-x: hidden;
     background-color: #0D0D0D;
     color: #EDE6D5;
+    max-width: 1600px;
+    position: relative;
 }
 
 html{
     scroll-behavior: smooth;
 }
 
+p{
+    font-family: 'Lato', sans-serif;
+    font-weight:500;
+}
+
+h1 {
+    position: relative;
+    font-size: clamp(1.5rem, 4vw + 1.5rem ,5rem);
+    display: inline-block;
+    margin: 50px;
+    line-height: 1.2;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+}
+
+h2{
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+h3{
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* NAVEGADOR */
+
+.navegador{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 10;
+}
+
+.navegador_contenedor{
+    width: 1200px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navegador_link{
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: 'Lato', sans-serif;
+    color: #EDE6D5;
+    position: relative;
+}
+
+.navegador_link::after {
+    content: "";
+    width: 0;
+    height: 4px;
+    background-color: #EDE6D5;
+    position: absolute;
+    bottom: -4px;
+    right: 50%;
+    transition: all 0.5s;
+    will-change: width;
+    border-radius: 100vmax;
+}
+
+.navegador_link:hover::after {
+    width: 100%;
+    right: 0;
+}
+
+/* INICIO */
+
 #inicio{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.inicio_contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     
 }
 
@@ -39,6 +120,7 @@ html{
     color: #ffffff; /* Ajusta según tu diseño */
     display: inline-block;
     position: relative;
+    height: 30px;
 }
 
 .escribiendo::after {
@@ -48,6 +130,17 @@ html{
     right: -10px;
     animation: blink 0.7s infinite;
 }
+
+
+/* FUNCIONALIDADES */
+
+.volver_arriba{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+}
+
+/* ANIMACIONES */
 
 @keyframes blink {
     0%, 100% { opacity: 1; }
