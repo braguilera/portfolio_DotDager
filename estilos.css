@@ -1,0 +1,18 @@
+/* Inicio */
+
+body{
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: #333333;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+#inicio{
+    width: 100vw;
+    height: 100vh;
+    
+}
