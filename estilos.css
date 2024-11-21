@@ -4,7 +4,8 @@ body{
     margin: 0;
     box-sizing: border-box;
     overflow-x: hidden;
-    background-color: #333333;
+    background-color: #0D0D0D;
+    color: #EDE6D5;
 }
 
 html{
@@ -15,4 +16,40 @@ html{
     width: 100vw;
     height: 100vh;
     
+}
+
+#inicio h1{
+    font-size: clamp(2rem, 4vw + 2rem, 12rem);
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 4px;
+    position: relative;
+    line-height: 1.2;
+    user-select: none;
+    background-color: #000000c0;
+    text-shadow: 1px 1px 3.5px rgba(73, 66, 66, 0.425);
+    background-image: linear-gradient(45deg, #131111, #363131);
+}
+
+.escribiendo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff; /* Ajusta según tu diseño */
+    display: inline-block;
+    position: relative;
+}
+
+.escribiendo::after {
+    content: "|";
+    font-weight: normal;
+    position: absolute;
+    right: -10px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
