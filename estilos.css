@@ -15,6 +15,7 @@ body{
     --color-live: #fc0c0c;
     --color-decoration:#884dbf;
     --bg-color-grid:#1a192b;
+    --color-border: #302f4183;
 }
 
 html{
@@ -37,7 +38,8 @@ h1 {
 }
 
 h2{
-    font-size: 2rem;
+    font-size: 3rem;
+    margin: 0;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -191,6 +193,32 @@ h3{
     animation: blink 0.7s infinite;
 }
 
+/* SOBRE MÍ */
+
+#sobre_mi{
+    width: 100%;
+    height: 100vh;
+    padding-top: 80px;
+}
+
+.sobre_mi_grid{
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(2, 300px);
+    gap: 20px;
+}
+
+.sobre_mi_grid_item{
+    background-color: var(--bg-color-grid);
+    padding: 20px;
+    border-radius: 32px;
+    border: 2px solid var(--color-border);
+}
+
+.sobre_mi_grid_item:first-child{
+    background-color: transparent;
+    border: none;
+}
 
 /* FUNCIONALIDADES */
 
