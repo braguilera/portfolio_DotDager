@@ -165,13 +165,23 @@ a{
     position: absolute;
     bottom: 30px;
     right: 90px;
+    opacity: 1; 
+    transform: translateX(0);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
+
 
 .inicio_links::after{
     content: "";
     width: 2px;
     height: 100px;
     background-color: var(--txt-color);
+}
+
+
+.inicio_links.ocultar {
+    opacity: 0;
+    transform: translateX(100px); 
 }
 
 .inicio_dager {
