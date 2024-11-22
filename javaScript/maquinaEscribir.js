@@ -99,4 +99,35 @@ document.addEventListener("DOMContentLoaded", () => {
     typeEffect();
 });
 
+const carrusel = document.querySelector('.carrusel');
+let isMouseDown = false;
+let startX;
+let scrollLeft;
+
+carrusel.addEventListener('mousedown', (e) => {
+    isMouseDown = true;
+    startX = e.pageX - carrusel.offsetLeft;
+    scrollLeft = carrusel.scrollLeft;
+    carrusel.style.cursor = 'grabbing';
+});
+
+carrusel.addEventListener('mouseleave', () => {
+    isMouseDown = false;
+    carrusel.style.cursor = 'grab';
+});
+
+carrusel.addEventListener('mouseup', () => {
+    isMouseDown = false;
+    carrusel.style.cursor = 'grab';
+});
+
+carrusel.addEventListener('mousemove', (e) => {
+    if (!isMouseDown) return;
+    e.preventDefault();
+    const x = e.pageX - carrusel.offsetLeft;
+    const walk = (x - startX) * 2; // Ajustar la velocidad del desplazamiento
+    carrusel.scrollLeft = scrollLeft - walk;
+});
+
+
 

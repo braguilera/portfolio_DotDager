@@ -16,6 +16,8 @@ body{
     --bg-color-grid:#1a192b;
     --color-border: #302f4183;
     --tittle-color:#f8f9ff;
+    --background-color: black;
+    --text-color: hsl(0, 0%, 100%);
 }
 
 html{
@@ -123,7 +125,7 @@ a{
     flex-direction: column;
     align-items: flex-start;
     margin: 0 auto;
-    gap: 20px;
+    padding-left: 20%;
 }
 
 #inicio h1{
@@ -206,6 +208,7 @@ a{
     display: inline-block;
     position: relative;
     height: 30px;
+    padding-bottom: 10px;
 }
 
 .escribiendo::after {
@@ -214,6 +217,82 @@ a{
     position: absolute;
     right: -10px;
     animation: blink 0.7s infinite;
+}
+
+/* CARROUSEL */
+
+#carrusel_videos {
+    margin: 50px auto;
+    width: 90%;
+    overflow: hidden;
+}
+
+.carrusel {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
+    cursor: grab;
+}
+
+.video-item {
+    width: 250px;
+    flex-shrink: 0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: auto;
+}
+
+.video-info h3 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.video-info a {
+    display: inline-block;
+    margin-top: 5px;
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.video-info .duracion {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.wrapper {
+    display: grid;
+    place-content: center;
+    background-color: var(--bg-color);
+    font-family: "Oswald", sans-serif;
+    font-size: 8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--txt-color);
+}
+
+.wrapper > div {
+    grid-area: 1/1/-1/-1;
+}
+
+.top {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+}
+
+.bottom {
+    clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+    color: transparent;
+    background: linear-gradient(179deg, rgb(63, 59, 59) 53%, var(--txt-color) 65%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    transform: translateX(-0.02em);
 }
 
 /* SOBRE MÍ */
