@@ -114,7 +114,6 @@ a{
     display: flex;
     align-items: center;
     position: relative;
-    padding-left: 5%;
     gap: 10%;
 }
 
@@ -122,8 +121,9 @@ a{
     max-width: 1200px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     margin: 0 auto;
+    
 }
 
 #inicio h1{
@@ -144,8 +144,8 @@ a{
     align-items: center;
     gap: 16px;
     position: absolute;
-    bottom: 20px;
-    right: 5%;
+    bottom: 30px;
+    right: 90px;
 }
 
 .inicio_links::after{
@@ -182,9 +182,6 @@ a{
 }
 
 .twitch_status{
-    position: absolute;
-    bottom: 0;
-    right: 0;
     z-index: 4;
     background-color: #0D0D0D;
     color: white;
@@ -419,7 +416,17 @@ a{
     position: fixed;
     bottom: 0;
     right: 3%;
+    opacity: 0; /* Empiezan invisibles */
+    transform: translateX(100px); /* Se desplazan hacia la izquierda */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
+
+/* Estilo cuando los botones se deben mostrar (se añaden al observar) */
+.botones_laterales.mostrar {
+    opacity: 1;
+    transform: translateX(0); /* Vuelven a su posición original */
+}
+
 
 .volver_arriba{
     position: absolute;
