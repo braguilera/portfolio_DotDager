@@ -23,6 +23,7 @@
         <script src="javaScript/maquinaEscribir.js"></script>
         <script src="javaScript/activarPepino.js"></script>
         <script src="javaScript/botonesLaterales.js"></script>
+        <script src="javaScript/carrousel.js" defer></script>
 
 </head>
 <body>
@@ -58,7 +59,7 @@
                 <div class="top">&lt;Dot Dager&gt;</div>
                 <div class="bottom" aria-hidden="true">&lt;Dot Dager&gt;</div>
             </section>
-            <h1></h1>
+
                 <p class="escribiendo"></p>
 
                 <div id="twitch_status" class="twitch_status"> On live</div>
@@ -75,89 +76,74 @@
 
         <!-- Sección Carrusel de Videos -->
         <section id="carrusel_videos">
-            <div class="carrusel">
-                <div class="video-item">
-                    <div class="video-thumbnail">
-                        <img src="ruta_imagen_video1.jpg" alt="Video 1">
-                    </div>
-                    <div class="video-info">
-                        <h3>Video 1 Título</h3>
-                        <a href="enlace_video1" target="_blank">Ver Video</a>
-                        <span class="duracion">10:30</span>
-                    </div>
-                </div>
-                <div class="video-item">
-                    <div class="video-thumbnail">
-                        <img src="ruta_imagen_video2.jpg" alt="Video 2">
-                    </div>
-                    <div class="video-info">
-                        <h3>Video 2 Título</h3>
-                        <a href="enlace_video2" target="_blank">Ver Video</a>
-                        <span class="duracion">15:45</span>
-                    </div>
-                </div>
-                <div class="video-item">
-                    <div class="video-thumbnail">
-                        <img src="ruta_imagen_video1.jpg" alt="Video 1">
-                    </div>
-                    <div class="video-info">
-                        <h3>Video 1 Título</h3>
-                        <a href="enlace_video1" target="_blank">Ver Video</a>
-                        <span class="duracion">10:30</span>
-                    </div>
-                </div>
-                <div class="video-item">
-                    <div class="video-thumbnail">
-                        <img src="ruta_imagen_video2.jpg" alt="Video 2">
-                    </div>
-                    <div class="video-info">
-                        <h3>Video 2 Título</h3>
-                        <a href="enlace_video2" target="_blank">Ver Video</a>
-                        <span class="duracion">15:45</span>
-                    </div>
-                </div>
-                <div class="video-item">
-                    <div class="video-thumbnail">
-                        <img src="ruta_imagen_video1.jpg" alt="Video 1">
-                    </div>
-                    <div class="video-info">
-                        <h3>Video 1 Título</h3>
-                        <a href="enlace_video1" target="_blank">Ver Video</a>
-                        <span class="duracion">10:30</span>
-                    </div>
-                </div>
-                <div class="video-item">
-                    <div class="video-thumbnail">
-                        <img src="ruta_imagen_video2.jpg" alt="Video 2">
-                    </div>
-                    <div class="video-info">
-                        <h3>Video 2 Título</h3>
-                        <a href="enlace_video2" target="_blank">Ver Video</a>
-                        <span class="duracion">15:45</span>
-                    </div>
-                </div>
-                <div class="video-item">
-                    <div class="video-thumbnail">
-                        <img src="ruta_imagen_video1.jpg" alt="Video 1">
-                    </div>
-                    <div class="video-info">
-                        <h3>Video 1 Título</h3>
-                        <a href="enlace_video1" target="_blank">Ver Video</a>
-                        <span class="duracion">10:30</span>
-                    </div>
-                </div>
-                <div class="video-item">
-                    <div class="video-thumbnail">
-                        <img src="ruta_imagen_video2.jpg" alt="Video 2">
-                    </div>
-                    <div class="video-info">
-                        <h3>Video 2 Título</h3>
-                        <a href="enlace_video2" target="_blank">Ver Video</a>
-                        <span class="duracion">15:45</span>
-                    </div>
-                </div>
 
-            </div>
+            <i id="left" class="fa_solid fa_angle_left"> <img src="./iconos/left.svg" alt="boton para mover las imagenes del carrousel a la izquierda"> </i>
+
+            <ul class="carrusel">
+                <li class="video_card">
+                    <div class="video_thumbnail">
+                        <img src="./imagenes/video1.png" alt="Video 1" draggable="false">
+                    </div>
+                    <div class="video-info">
+                        <h3>Video 1 Título</h3>
+                        <a href="enlace_video1" target="_blank">Ver Video</a>
+                        <span class="video_duracion">10:30</span>
+                    </div>
+                </li>
+                <li class="video_card">
+                    <div class="video_thumbnail">
+                        <img src="./imagenes/video1.png" alt="Video 1" draggable="false">
+                    </div>
+                    <div class="video-info">
+                        <h3>Video 1 Título</h3>
+                        <a href="enlace_video1" target="_blank">Ver Video</a>
+                        <span class="video_duracion">10:30</span>
+                    </div>
+                </li>
+                <li class="video_card">
+                    <div class="video_thumbnail">
+                        <img src="./imagenes/video1.png" alt="Video 1" draggable="false">
+                    </div>
+                    <div class="video-info">
+                        <h3>Video 1 Título</h3>
+                        <a href="enlace_video1" target="_blank">Ver Video</a>
+                        <span class="video_duracion">10:30</span>
+                    </div>
+                </li>
+                <li class="video_card">
+                    <div class="video_thumbnail">
+                        <img src="./imagenes/video1.png" alt="Video 1" draggable="false">
+                    </div>
+                    <div class="video-info">
+                        <h3>Video 1 Título</h3>
+                        <a href="enlace_video1" target="_blank">Ver Video</a>
+                        <span class="video_duracion">10:30</span>
+                    </div>
+                </li>
+                <li class="video_card">
+                    <div class="video_thumbnail">
+                        <img src="./imagenes/video1.png" alt="Video 1" draggable="false">
+                    </div>
+                    <div class="video-info">
+                        <h3>Video 1 Título</h3>
+                        <a href="enlace_video1" target="_blank">Ver Video</a>
+                        <span class="video_duracion">10:30</span>
+                    </div>
+                </li>
+                <li class="video_card">
+                    <div class="video_thumbnail">
+                        <img src="./imagenes/video1.png" alt="Video 1" draggable="false">
+                    </div>
+                    <div class="video-info">
+                        <h3>Video 1 Título</h3>
+                        <a href="enlace_video1" target="_blank">Ver Video</a>
+                        <span class="video_duracion">10:30</span>
+                    </div>
+                </li>
+            </ul>
+
+            <i id="right" class="fa_solid fa_angle_right"> <img src="./iconos/right.svg" alt="boton para mover las imagenes del carrousel a la derecha"> </i>
+
         </section>
 
 
