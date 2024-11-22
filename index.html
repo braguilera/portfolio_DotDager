@@ -21,6 +21,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 
         <script src="javaScript/maquinaEscribir.js"></script>
+        <script src="javaScript/activarPepino.js"></script>
 
 </head>
 <body>
@@ -74,29 +75,41 @@
 
 
         <section id="sobre_mi">
-            <h2>Sobre Mí</h2>
+            <header class="sobre_mi_header">
+                <h2>Sobre Mí</h2>
+                <p>Soy un creador de contenido, en donde encontrarás de todo ¿Qué hacemos en los directos? Arrancamos con preguntas y respuestas para interactuar con ustedes, después le damos al forobardo de la semana o alguna noticia interesante. Luego pasamos al contenido principal, donde programamos, revisamos algunos portfolios o simplemente nos mandamos alguna partida. Y como siempre, hay mucha, pero mucha falopa.
+                Además, tengo canales dedicados a mis otras pasiones: la música, el cine y un rincón donde los mejores (o peores) momentos de mis directos viven eternamente en forma de clips.</p>    
+            </header>
 
             <main class="sobre_mi_grid">
                 <article class="sobre_mi_grid_item">
-                    <p>Soy creador de contenido y en mis directos hago de todo: comenzamos con preguntas y respuestas, luego hablamos de noticias o el forobardo de la semana, y después programamos, revisamos portfolios o jugamos. Y como siempre, hay mucha, pero mucha falopa.
-                    También tengo canales sobre música, cine y clips con lo mejor de mis directos.
-                    Me apasionan varias cosas, pero hay algunas que ocupan un lugar especial muy dentro de mí!
+                    <p>
+                        Me apasionan varias cosas, pero hay algunas que ocupan un lugar especial muy dentro de mí! Acá dejo algunas de mis aficiones:
                     </p>
                 </article>
                 <article class="sobre_mi_grid_item">
-                    <strong>Guitarra:</strong> Nada supera el sonido de una guitarra bien afinada... excepto quizás el de una guitarra desafinada en manos de alguien con actitud.
+                    <header><img src="./iconos/guitar.svg" alt="icono de guitarra"> <strong>Guitarra:</strong> </header>
+                        Nada supera el sonido de una guitarra bien afinada... excepto quizás el de una guitarra desafinada en manos de alguien con actitud.
                 </article>
                 <article class="sobre_mi_grid_item">
-                    <strong>Filósofía:</strong>"El significado del universo podría estar en las cosas simples… como mí pepino. La complejidad radica en quién lo sostiene."
+                    <header><img src="./iconos/filosofia.svg" alt="icono de guitarra"> <strong>Filósofía:</strong> </header>
+                    "El significado del universo podría estar en las cosas simples… como mí pepino. La complejidad radica en quién lo sostiene."
                 </article>
                 <article class="sobre_mi_grid_item">
-                    <strong>Gatos:</strong> Ellos son peludos, apretables, suaves, y siempre están presentes cuando los necesitas... aunque solo sea para ignorarte. Así es, hablo de mís gatos!
+                    <header><img src="./iconos/gato.svg" alt="icono de guitarra"> <strong>Gatos:</strong> </header>
+                    Ellos son peludos, apretables, suaves, y siempre están presentes cuando los necesitas... aunque solo sea para ignorarte. Así es, hablo de mís gatos!
+                </article>
+                <article class="sobre_mi_grid_item" onclick="activarPepino()">
+                    <header><img src="./iconos/pepino.svg" alt="icono de pepino"> <strong>Pepinos:</strong> </header>
+                    ¡Lo importante es que son frescos y siempre agradables de tener cerca!
+                    <div id="pepino" class="pepino"></div>
+                    <div id="gota1" class="gota"></div>
+                    <div id="gota2" class="gota"></div>
+                    <div id="gota3" class="gota"></div>
                 </article>
                 <article class="sobre_mi_grid_item">
-                    <strong>Pepinos:</strong> ¡Lo importante es que son frescos y siempre agradables de tener cerca!
-                </article>
-                <article class="sobre_mi_grid_item">
-                    <strong>FALOPA:</strong> La falopa, esa chispa que le da sabor a la vida.
+                    <header><img src="./iconos/falopa.svg" alt="icono de guitarra"> <strong>FALOPA:</strong> </header>
+                    La falopa, esa chispa que le da sabor a la vida.
                 </article>
 
             </main>

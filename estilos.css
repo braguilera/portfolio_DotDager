@@ -25,6 +25,8 @@ html{
 p{
     font-family: 'Lato', sans-serif;
     font-weight:500;
+    font-size: 1.2rem;
+    margin: 0;
 }
 
 h1 {
@@ -198,14 +200,28 @@ h3{
 #sobre_mi{
     width: 100%;
     height: 100vh;
-    padding-top: 80px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre_mi_header{
+    width: 80%;
+    margin-bottom: 80px;
+}
+
+.sobre_mi_header h2{
+    text-align: center;
 }
 
 .sobre_mi_grid{
     display: grid;
-    grid-template-columns: repeat(3, 300px);
-    grid-template-rows: repeat(2, 300px);
+    grid-template-columns: repeat(3, 250px);
+    grid-template-rows: repeat(2, 250px);
     gap: 20px;
+    font-size: 1.2rem;
 }
 
 .sobre_mi_grid_item{
@@ -213,13 +229,64 @@ h3{
     padding: 20px;
     border-radius: 32px;
     border: 2px solid var(--color-border);
+    position: relative;
 }
 
 .sobre_mi_grid_item:first-child{
     background-color: transparent;
     border: none;
+    padding: 5px;
+    margin: 0;
 }
 
+.sobre_mi_grid_item:nth-of-type(5){
+    z-index: 3;
+}
+
+.pepino {
+    width: 0;
+    height: 70%;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+    background-image: url(/iconos/pepino.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+
+.gota {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    transition: opacity 2s, width 2s, height 2s;
+    background-image: url(/iconos/leche.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#gota1{
+    top: 70%;
+    left: 70%;
+}
+#gota2{
+    top: 20%;
+    left: 100%;
+}
+#gota3{
+    top: 50%;
+    left: 50%;
+}
 /* FUNCIONALIDADES */
 
 .volver_arriba{
@@ -300,9 +367,27 @@ h3{
 }
 
 
+
+/* Efecto de temblor */
+
+
+/* Estilo inicial de la gota */
+
+
+
+
 /* ANIMACIONES */
 
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
+}
+
+@keyframes temblor {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    20% { transform: translateX(-50%) rotate(5deg); }
+    40% { transform: translateX(-50%) rotate(-5deg); }
+    60% { transform: translateX(-50%) rotate(5deg); }
+    80% { transform: translateX(-50%) rotate(-5deg); }
+    100% { transform: translateX(-50%) rotate(0deg); }
 }
