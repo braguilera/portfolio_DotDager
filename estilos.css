@@ -242,8 +242,22 @@ a{
     margin: 50px auto;
     max-width: 1200px;
     width: 100%;
-    overflow: hidden;
     position: relative;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 40px 0 80px 0;
+}
+
+.carrusel_header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrusel_header a{
+    color: var(--txt-color);
+    display: flex;
 }
 
 #carrusel_videos .carrusel{
@@ -255,6 +269,7 @@ a{
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: 0;
+    cursor: grab;
 }
 
 #carrusel_videos .carrusel::-webkit-scrollbar{
@@ -266,7 +281,7 @@ a{
 }
 
 #carrusel_videos .carrusel.dragging .video_card{
-    cursor: grab;
+    cursor: grabbing;
     user-select: none;
 }
 
@@ -279,18 +294,18 @@ a{
     border-radius: 100vmax;
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 90%;
     transform: translateY(-50%);
     box-shadow: 0 3px 6px rgb(0, 0, 0, 0.23);
     z-index: 3;
 }
 
 .fa_solid:first-child{
-    left: -22px;
+    left: 40%;
 }
 
 .fa_solid:last-child{
-    right: -22px;
+    right: 40%;
 }
 
 .video_card{
@@ -302,7 +317,6 @@ a{
     border-radius: 8px; 
     padding: 16px;
     border: 2px solid var(--color-border);
-
 }
 
 .video_thumbnail{
@@ -323,6 +337,17 @@ a{
     justify-content: space-between;
     flex-direction: column;
     box-sizing: border-box;
+}
+
+.video_info h3{
+    height: auto;
+    display: -webkit-box;
+    max-width: 100%;
+    line-height: 1;
+
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .video_footer{
