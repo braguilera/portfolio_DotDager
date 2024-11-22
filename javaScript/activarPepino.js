@@ -5,20 +5,19 @@ function activarPepino() {
     const gota3 = document.getElementById('gota3');
     const gota = document.querySelector('.gota')
 
-    // Muestra el pepino y empieza a temblar
     pepino.style.visibility = 'visible';
     pepino.style.animation = 'temblor .8s infinite';
     pepino.style.height = '300px';
     pepino.style.width = '300px';
     pepino.style.zIndex = '-1'
-    // Crea la gota
+
     setTimeout(() => {
         gota.style.visibility = 'visible';
         gota.style.width = '300px';
         gota.style.height = '300px';
     }, 500);
 
-    // Desaparece la gota
+
     setTimeout(() => {
         gota1.style.opacity = '0';
     }, 500);
@@ -31,7 +30,6 @@ function activarPepino() {
         gota3.style.opacity = '0';
     }, 800);
 
-    // Esconde el pepino
     setTimeout(() => {
         pepino.style.animation = '';
         pepino.style.visibility = 'hidden';

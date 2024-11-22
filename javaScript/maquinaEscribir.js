@@ -1,89 +1,81 @@
 document.addEventListener("DOMContentLoaded", () => {
     const texts = [
-        "Creador de contenido",
-        "Catador de pepinos",
-        "Full-stack Senior",
+        "Creador de contenido.",
+        "Catador de pepinos.",
+        "Full-stack Senior.",
         "Amante de los pit",
-        "Contador serial de chistes de mierda",
-        "Jugador profesional de Lamberjack",
-        "Guitarrista aficionado",
-        "Fanático de los árboles fálicos",
+        "Contador serial de chistes de mierda.",
+        "Jugador profesional de Lamberjack."
     ];
 
     const typingElement = document.querySelector(".escribiendo");
-    let textIndex = 0; // Índice del texto actual
-    let charIndex = 0; // Índice del carácter actual
-    let isDeleting = false; // Indicador de si está borrando
-    let isReplacingPit = false; // Indicador de reemplazo
-    let isReplacingGatos = false; // Indicador de que se está escribiendo "gatos"
-    let delay = 80; // Tiempo base de delay
-    let afterWriteDelay = 1000; // Pausa después de escribir un texto completo
-
+    let textIndex = 0; 
+    let charIndex = 0;
+    let isDeleting = false; 
+    let isReplacingPit = false;
+    let isReplacingGatos = false; 
+    let delay = 80; 
+    let afterWriteDelay = 1000; 
     function typeEffect() {
         const currentText = texts[textIndex];
 
         if (currentText === "Amante de los pit") {
-            const baseText = "Amante de los "; // Parte fija del texto
+            const baseText = "Amante de los "; 
             const pitText = "pit";
-            const replacementText = "gatos";
+            const replacementText = "gatos.";
 
             if (!isDeleting && !isReplacingPit && !isReplacingGatos) {
-                // Escribir el texto inicial "Amante de los pit"
                 typingElement.textContent = currentText.slice(0, charIndex + 1);
                 charIndex++;
                 if (charIndex === currentText.length) {
-                    delay = 300; // Pausa después de escribir "Amante de los pit"
+                    delay = 300; 
                     setTimeout(() => {
                         isDeleting = true;
-                        isReplacingPit = true; // Activar el reemplazo
-                        charIndex = pitText.length; // Preparar para borrar "pit"
+                        isReplacingPit = true; 
+                        charIndex = pitText.length; 
                         typeEffect();
                     }, delay);
                     return;
                 }
             } else if (isDeleting && isReplacingPit) {
-                // Borrar "pit" letra por letra
                 typingElement.textContent = baseText + pitText.slice(0, charIndex - 1);
                 charIndex--;
-                delay = 50; // Velocidad rápida para borrar
+                delay = 50; 
                 if (charIndex === 0) {
-                    isDeleting = false; // Cambiar a escribir
-                    isReplacingPit = false; // Reemplazo de "pit" terminado
-                    isReplacingGatos = true; // Comenzar a escribir "gatos"
-                    charIndex = 0; // Reiniciar índice para escribir "gatos"
+                    isDeleting = false;
+                    isReplacingPit = false;
+                    isReplacingGatos = true;
+                    charIndex = 0;
                 }
             } else if (isReplacingGatos) {
-                // Escribir "gatos" letra por letra
                 typingElement.textContent = baseText + replacementText.slice(0, charIndex + 1);
                 charIndex++;
-                delay = 50; // Velocidad rápida para escribir
+                delay = 50;
                 if (charIndex === replacementText.length) {
-                    delay = afterWriteDelay; // Pausa después de escribir "gatos"
+                    delay = afterWriteDelay;
                     setTimeout(() => {
-                        isDeleting = true; // Comenzar a borrar todo el texto
+                        isDeleting = true;
                         isReplacingGatos = false;
-                        charIndex = (baseText + replacementText).length; // Preparar para borrar todo
+                        charIndex = (baseText + replacementText).length;
                         typeEffect();
                     }, delay);
                     return;
                 }
             } else if (isDeleting && !isReplacingPit && !isReplacingGatos) {
-                // Borrar todo "Amante de los gatos"
                 typingElement.textContent = typingElement.textContent.slice(0, charIndex - 1);
                 charIndex--;
-                delay = 50; // Velocidad rápida para borrar
+                delay = 50;
                 if (charIndex === 0) {
-                    isDeleting = false; // Cambiar a escribir
-                    textIndex = (textIndex + 1) % texts.length; // Ir al siguiente texto
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
                 }
             }
         } else {
-            // Animación normal para otros textos
             if (!isDeleting) {
                 typingElement.textContent = currentText.slice(0, charIndex + 1);
                 charIndex++;
                 if (charIndex === currentText.length) {
-                    delay = afterWriteDelay; // Pausa después de escribir
+                    delay = afterWriteDelay;
                     setTimeout(() => {
                         isDeleting = true;
                         typeEffect();
@@ -93,10 +85,10 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 typingElement.textContent = currentText.slice(0, charIndex - 1);
                 charIndex--;
-                delay = 50; // Velocidad rápida para borrar
+                delay = 50;
                 if (charIndex === 0) {
-                    isDeleting = false; // Cambiar a escribir
-                    textIndex = (textIndex + 1) % texts.length; // Ir al siguiente texto
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
                 }
             }
         }
