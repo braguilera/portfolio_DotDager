@@ -54,6 +54,13 @@ h3{
     color: var(--tittle-color);
 }
 
+a{
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;;
+}
+
+
+
 /* NAVEGADOR */
 
 .navegador{
@@ -211,6 +218,7 @@ h3{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .sobre_mi_header{
@@ -314,10 +322,12 @@ h3{
     width: 100vw;
     height: 300px;
     display: flex;
+    flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
     background-color: var(--bg-color-contraste);
+    gap: 10%;
 }
 
 .comunidad p{
@@ -325,7 +335,52 @@ h3{
 }
 
 .comunidad a{
-    color: var(--color-decoration);
+    text-decoration: none;
+    color: var(--txt-color);
+    background-color: var(--color-decoration);
+    border-radius: 16px;
+    padding: 8px 16px;
+    border: none;
+}
+
+/* CONTACTO */
+
+#contacto{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color-contraste);
+}
+
+.contacto_contenedor{
+    max-width: 1200px;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+.contacto_botones{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.contacto_botones a{
+    width: 15%;
+    color: var(--txt-color);
+    background-color: var(--color-decoration);
+    border-radius: 16px;
+    padding: 8px 16px;
+    border: none;
 }
 
 /* LAMBERJACK */
@@ -336,6 +391,7 @@ h3{
     display: flex;
     align-items: center;
     position: relative;
+    padding: 50px;
 }
 
 .lamberjack_contenedor{
@@ -345,10 +401,11 @@ h3{
     flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
+    gap: 20px;
 }
 
 .lamberjack_juego{
-    width: 400px;
+    width: 600px;
     height: 800px;
     border-radius: 16px;
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 100.5);
@@ -356,15 +413,32 @@ h3{
 
 /* FUNCIONALIDADES */
 
-.volver_arriba{
+.botones_laterales{
+    height: 550px;
+    width: 100px;
     position: fixed;
-    bottom: 40px;
-    right: 40px;
+    bottom: 0;
+    right: 3%;
+}
+
+.volver_arriba{
+    position: absolute;
+    bottom: 10%;
+    right: 20px;
+    color: var(--txt-color);
+    background-color: var(--color-decoration);
+    width: 70px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100vmax;
 }
 
 .tooltip-container {
     background: linear-gradient(138deg, rgba(3, 169, 244, 1) 15%, rgba(63, 180, 233, 1) 65%);
-    position: relative;
+    position: absolute;
+    bottom: 60%;
+    right: 20px;
     cursor: pointer;
     font-size: 17px;
     padding: 0.7em 0.7em;
@@ -373,6 +447,11 @@ h3{
     transition: background 0.6s;
     width: 50px;
     height: 50px;
+}
+
+.tooltip-container:nth-child(2){
+    bottom: 30%;
+    transform: translateY(-30%);
 }
 
 .tooltip-container:hover {
@@ -402,9 +481,9 @@ h3{
     visibility: hidden;
     background: #fff;
     fill: #03a9f4;
-    padding: 8px; /* Reducido para que sea más compacto */
+    padding: 8px;
     border-radius: 100vmax;
-    transition: opacity 0.3s ease, transform 0.5s ease, visibility 0.3s ease, background 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, background 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
@@ -420,7 +499,7 @@ h3{
 .tooltip1 { transform: translate(-50%, 0%); }
 .tooltip2 { transform: translate(-50%, 0); }
 .tooltip3 { transform: translate(0, -50%); }
-.tooltip4 { transform: translate(60%, -50%); }
+.tooltip4 { transform: translate(0%, -50%); }
 
 .tooltip-container:hover .tooltip1 { transform: translate(-50%, -190%); }
 .tooltip-container:hover .tooltip2 { transform: translate(-50%, 90%); }
