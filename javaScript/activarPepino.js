@@ -7,6 +7,7 @@ function activarPepino() {
     // Mostrar y animar el pepinos
     pepino.style.bottom= '20%';
     pepino.style.animation = 'temblor 1s infinite';
+    pepino.style.opacity = '1';
 
     // Animación de gotas después de 1 segundo
     setTimeout(() => {
@@ -33,6 +34,7 @@ function activarPepino() {
     setTimeout(() => {
         pepino.style.animation = '';
         pepino.style.bottom= '4px';
+        pepino.style.opacity = '0';
     },3500);
 }
 
