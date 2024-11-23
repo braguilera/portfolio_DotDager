@@ -17,7 +17,6 @@ body{
     --color-border: #302f4183;
     --tittle-color:#f8f9ff;
     --background-color: black;
-    --text-color: hsl(0, 0%, 100%);
 }
 
 html{
@@ -493,11 +492,15 @@ a{
     cursor: pointer;
     text-align: center;
     scale: 0;
-    transition: scale .4s ease;
+    transition: scale .4s ease, background-color .4s ease;
 }
 
 .sobre_mi_grid_item.in-view{
     scale: 1;
+}
+
+.sobre_mi_grid_item:hover{
+    background-color: #252433;
 }
 
 .sobre_mi_grid_item header {

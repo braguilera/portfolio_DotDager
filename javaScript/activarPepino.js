@@ -4,12 +4,10 @@ function activarPepino() {
     const gota2 = document.getElementById('gota2');
     const gota3 = document.getElementById('gota3');
 
-    // Mostrar y animar el pepinos
     pepino.style.bottom= '20%';
     pepino.style.animation = 'temblor 1s infinite';
     pepino.style.opacity = '1';
 
-    // Animación de gotas después de 1 segundo
     setTimeout(() => {
         [gota1, gota2, gota3].forEach((gota, index) => {
             setTimeout(() => {
@@ -17,11 +15,10 @@ function activarPepino() {
                 gota.style.opacity = '1';
                 gota.style.width = '400px';
                 gota.style.height = '400px';
-            }, index * 300); // Las gotas aparecen escalonadas
+            }, index * 300);
         });
     }, 1000);
 
-    // Ocultar todo después de 3 segundos
     setTimeout(() => {
         [gota1, gota2, gota3].forEach((gota) => {
             gota.style.visibility = 'hidden';
@@ -42,7 +39,6 @@ function activarPepino() {
 
 
 function mostrarPopup(mensaje) {
-    // Crear elementos del popup
     const overlay = document.createElement('div');
     overlay.className = 'popup-overlay';
 
@@ -55,25 +51,20 @@ function mostrarPopup(mensaje) {
     const boton = document.createElement('button');
     boton.textContent = 'Cerrar';
     boton.addEventListener('click', () => {
-        // Cerrar el popup
         document.body.removeChild(overlay);
         document.body.removeChild(popup);
     });
 
-    // Agregar elementos al popup
     popup.appendChild(texto);
     popup.appendChild(boton);
 
-    // Agregar popup y overlay al body
     document.body.appendChild(overlay);
     document.body.appendChild(popup);
 
-    // Mostrar el popup y el overlay
     overlay.style.display = 'block';
     popup.style.display = 'block';
 }
 
-// Funciones para cada categoría con chistes personalizados
 function activarGuitarras() {
     mostrarPopup("¿Qué tienen en común las guitarras y los pitos? Ambos suenan mejor cuando los tocas con pasión.");
 }
