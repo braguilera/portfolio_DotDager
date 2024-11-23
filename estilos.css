@@ -868,12 +868,18 @@ mark{
     bottom: 10%;
     right: 20px;
     color: var(--txt-color);
-    background-color: var(--color-decoration);
+    background-color: #5d2e96;
     width: 50px;
     height: 50px;
     justify-content: center;
     align-items: center;
     border-radius: 100vmax;
+    transition: background-color .4s ease
+}
+
+.volver_arriba:hover{
+    background-color: var(--color-decoration);
+
 }
 
 .tooltip-container {
