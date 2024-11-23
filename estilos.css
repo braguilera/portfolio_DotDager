@@ -530,7 +530,7 @@ a{
 .contenedor_jumpscare{
     width: 300px;
     height: 200px;
-    background-image: url(/imagenes/pala.jpg);
+    background-image: url(./imagenes/pala.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -551,7 +551,7 @@ a{
     transition: all 0.3s ease;
     z-index: 1;
     opacity: 0;
-    background-image: url(/iconos/pepino.svg);
+    background-image: url(iconos/pepino.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
