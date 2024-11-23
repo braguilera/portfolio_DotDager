@@ -451,8 +451,6 @@ a{
 }
 
 
-
-
 /* SOBRE MÍ */
 
 #sobre_mi {
@@ -1147,6 +1145,10 @@ mark{
     .lamberjack_juego{
         width: 300px;
     }
+
+    .inicio_links{
+        right: 25px;
+    }
 }
 
 @media screen and (max-height: 1000px){
@@ -1156,7 +1158,8 @@ mark{
     }
 }
 
-@media screen and (max-height: 600px){
+
+@media screen and (max-height: 800px){
     .inicio_dager{
         margin-top: 20px;
     }
