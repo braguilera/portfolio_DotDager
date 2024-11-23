@@ -383,6 +383,7 @@ a{
     justify-content: space-between;
     flex-direction: column;
     box-sizing: border-box;
+    padding-top: 20px;
 }
 
 .video_info h3{
@@ -961,17 +962,71 @@ a{
 @media screen and (max-width: 600px) {
 
     #carrusel_videos .carrusel{
-        grid-auto-columns: 100%;
+        grid-auto-columns: 70%;
+    }
+
+    .carrusel_header a {
+        font-size: 14px;
+    }
+
+    .fa_solid:first-child{
+        left: 30%;
+    }
+
+    .fa_solid:last-child{
+        right: 30%;
+    }
+
+    #lamberjack{
+        padding: 0;
+    }
+
+    .lamberjack_contenedor p{
+        padding: 0 10px;
+    }
+
+    .contacto_botones{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contacto_botones a{
+        width: 40%;
     }
 
 }
 
-@media screen and (max-width: 600px) {
-    .carrusel_header a {
-    
-        font-size: 14px;
+@media screen and (max-width: 450px) {
+
+    #inicio{
+        justify-content: flex-start;
     }
 
+    .inicio_dager{
+        margin-top: 30%;
+    }
+
+    #carrusel_videos .carrusel{
+        grid-auto-columns: 100%;
+    }
+
+    
+    .lamberjack_juego{
+        width: 300px;
+    }
+}
+
+@media screen and (max-height: 1000px){
+    .navegador_main.visible {
+        height: 200%;
+
+    }
+}
+
+@media screen and (max-height: 600px){
+    .inicio_dager{
+        margin-top: 20px;
+    }
 }
 
 
