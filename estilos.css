@@ -920,8 +920,7 @@ mark{
     height: 20px;
     transform: translate(-50%, -50%);
     opacity: 0;
-    visibility: hidden;
-    background: var(--color-decoration);
+    background: #5d2e96;
     padding: 8px;
     border-radius: 100vmax;
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, background 0.3s ease;
@@ -942,6 +941,12 @@ mark{
     width: 40px;
     height: 40px;
     border-radius: 100vmax;
+    filter: grayscale(100%);
+    transition: filter .4s ease;
+}
+
+#tooltip_youtube img:hover{
+    filter: grayscale(0);
 }
 
 .tooltip-container:hover .tooltip {
@@ -961,7 +966,8 @@ mark{
 
 
 .tooltip:hover {
-    background: #5d2e96;
+    background: var(--color-decoration);
+
 }
 
 /* RESPONSIVE */
