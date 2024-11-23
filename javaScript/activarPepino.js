@@ -39,41 +39,31 @@ function activarPepino() {
 
 
 function mostrarPopup(mensaje) {
-    const overlay = document.createElement('div');
-    overlay.className = 'popup-overlay';
+    const overlay = document.querySelector('.popup-overlay');
+    const popup = document.querySelector('.popup');
+    const texto = popup.querySelector('p');
+    const contenedorJumpscare = popup.querySelector('.contenedor_jumpscare');
 
-    const popup = document.createElement('div');
-    popup.className = 'popup';
-
-    const texto = document.createElement('p');
     texto.textContent = mensaje;
-
-    const divJumpScare = document.createElement('div')
-    divJumpScare.className = 'contenedor_jumpscare'
-
-    const boton = document.createElement('button');
-    boton.textContent = 'Cerrar';
-    boton.addEventListener('click', () => {
-        document.body.removeChild(overlay);
-        document.body.removeChild(popup);
-    });
-
-
-
-    popup.appendChild(texto);
-    
     if (mensaje === "AAAAAAAAAAAAAHH!!!!") {
-        popup.classList.add('jumpscare');
-        popup.appendChild(divJumpScare);
+        contenedorJumpscare.style.display = 'block';
+    } else {
+        contenedorJumpscare.style.display = 'none';
     }
 
-    popup.appendChild(boton);
-
-    document.body.appendChild(overlay);
-    document.body.appendChild(popup);
 
     overlay.style.display = 'block';
     popup.style.display = 'block';
+
+
+    const botonCerrar = popup.querySelector('button');
+    if (!botonCerrar.dataset.eventAdded) {
+        botonCerrar.addEventListener('click', () => {
+            overlay.style.display = 'none';
+            popup.style.display = 'none';
+        });
+        botonCerrar.dataset.eventAdded = true;
+    }
 }
 
 function activarGuitarras() {
@@ -96,12 +86,11 @@ function activarJumpscare() {
     mostrarPopup("AAAAAAAAAAAAAHH!!!!");
 }
 
-// Asignar eventos de clic a los artículos
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('guitarras').addEventListener('click', activarGuitarras);
     document.getElementById('filosofia').addEventListener('click', activarFilosofia);
     document.getElementById('gatos').addEventListener('click', activarGatos);
     document.getElementById('falopa').addEventListener('click', activarFalopa);
-    document.getElementById('jumpscare').addEventListener('click', activarJumpscare)
-    document.getElementById('pepinos').addEventListener('click',activarPepino);
+    document.getElementById('jumpscare').addEventListener('click', activarJumpscare);
+    document.getElementById('pepinos').addEventListener('click', activarPepino);
 });

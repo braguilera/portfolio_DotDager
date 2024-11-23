@@ -527,14 +527,6 @@ a{
     margin: 0;
 }
 
-.contenedor_jumpscare{
-    width: 300px;
-    height: 200px;
-    background-image: url(./imagenes/pala.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
 
 #pepinos{
     z-index: 2;
@@ -640,6 +632,17 @@ a{
     z-index: 999;
     display: none;
 }
+
+.contenedor_jumpscare {
+    display: none;
+    margin-top: 20px;
+}
+
+.contenedor_jumpscare img {
+    width: 300px;
+    height: 200px;
+}
+
 
 
 /* COMUNIDAD */
