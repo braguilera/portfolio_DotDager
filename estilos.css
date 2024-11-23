@@ -1067,7 +1067,15 @@ mark{
     #inicio{
         flex-direction: column;
         align-items: flex-start;
-        padding-left: 10%;
+    }
+    
+    .inicio_dager, .inicio_contenedor{
+        margin-left: 10%;
+    }
+    
+
+    .entrada{
+        padding-right: 10%;
     }
 
     .lamberjack_juego{
