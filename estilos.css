@@ -495,11 +495,14 @@ a{
     border: none;
     padding: 5px;
     margin: 0;
+    cursor: default;
 }
+
 #pepinos{
     z-index: 2;
     position: relative;
 }
+
 .pepino {
     width: 150px;
     height: 300px;

@@ -22,9 +22,6 @@ function activarPepino() {
 
     // Ocultar todo después de 3 segundos
     setTimeout(() => {
-        pepino.style.animation = '';
-        pepino.style.bottom= '4px';
-
         [gota1, gota2, gota3].forEach((gota) => {
             gota.style.visibility = 'hidden';
             gota.style.opacity = '0';
@@ -32,7 +29,14 @@ function activarPepino() {
             gota.style.height = '0';
         });
     }, 3000);
+
+    setTimeout(() => {
+        pepino.style.animation = '';
+        pepino.style.bottom= '4px';
+    },3500);
 }
+
+
 
 
 function mostrarPopup(mensaje) {
