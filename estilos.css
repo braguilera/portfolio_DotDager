@@ -447,7 +447,10 @@ a{
 .video_footer span{
     display: flex;
     gap: 6px;
+    font-family: 'Lato', sans-serif;
 }
+
+
 
 
 /* SOBRE MÍ */
@@ -621,7 +624,6 @@ a{
 .popup button:hover {
     background-color: #ff3d33;
 }
-
 
 .popup-overlay {
     position: fixed;
