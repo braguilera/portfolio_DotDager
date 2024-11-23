@@ -24,21 +24,31 @@
         <script src="javaScript/activarPepino.js"></script>
         <script src="javaScript/botonesLaterales.js"></script>
         <script src="javaScript/carrousel.js" defer></script>
+        <script src="javaScript/menuHamburguesa.js"></script>
 
 </head>
 <body>
 
-    <header class="navegador">
-        <section class="wrapper_nav">
-            <div class="top">&lt;Dot Dager&gt;</div>
-            <div class="bottom" aria-hidden="true">&lt;Dot Dager&gt;</div>
-        </section>
+    <header class="navegador" >
+        <button class="abrir__menu" id="abrir"><img src="./iconos/menu.svg" alt="Abrir el menú de navegación"></button>
 
-        <nav class="navegador_contenedor">
-            <a href="#carrusel_videos" class="navegador_link"> <img src="./iconos/videos.svg" alt="imagen de videos"> Videos</a>
-            <a href="#sobre_mi" class="navegador_link"> <img src="./iconos/me.svg" alt="imagen de persona"> Sobre mí</a>
-            <a href="#lamberjack" class="navegador_link"> <img src="./iconos/axe.svg" alt="imagen de un hacha"> Lamberjack</a>
-            <a href="#contacto" class="navegador_link"> <img src="./iconos/phone.svg" alt="imagen de un telefono"> Contacto</a>
+        <nav class="navegador_main" id="nav">
+
+            <button class="cerrar__menu" id="cerrar"><img src="./iconos/close.svg" alt="Cerrar el menú de navegación"></button>
+
+            <section class="wrapper_nav">
+                <div class="top">&lt;Dot Dager&gt;</div>
+                <div class="bottom" aria-hidden="true">&lt;Dot Dager&gt;</div>
+            </section>
+
+            <article class="navegador_contenedor">
+                <a href="#carrusel_videos" class="navegador_link"> <img src="./iconos/videos.svg" alt="imagen de videos"> Videos</a>
+                <a href="#sobre_mi" class="navegador_link"> <img src="./iconos/me.svg" alt="imagen de persona"> Sobre mí</a>
+                <a href="#lamberjack" class="navegador_link"> <img src="./iconos/axe.svg" alt="imagen de un hacha"> Lamberjack</a>
+                <a href="#contacto" class="navegador_link"> <img src="./iconos/phone.svg" alt="imagen de un telefono"> Contacto</a>
+            </article>
+
+
         </nav>
     </header>
 
@@ -163,7 +173,7 @@
                     <header><img src="./iconos/pepino.svg" alt="icono de pepino"> <strong>Pepinos</strong> </header>
                     ¡Lo importante es que son frescos y siempre agradables de tener cerca!
                 </article>
-                
+
                 <div id="pepino" class="pepino"></div>
                 <div id="gota1" class="gota"></div>
                 <div id="gota2" class="gota"></div>
