@@ -44,7 +44,7 @@ h1 {
 }
 
 h2{
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 3vw + 1.5rem ,3rem);
     margin: 0;
     font-family: 'Poppins', sans-serif;
     color: var(--tittle-color);
@@ -120,11 +120,16 @@ a{
     display: flex;
     align-items: center;
     gap: 6px;
+    transition: background-color .3s ease;
 }
 
 .navegador_link:hover::after {
     width: 100%;
     right: 0;
+}
+
+.navegador_link:hover{
+    background-color: var(--color-border);
 }
 
 .abrir__menu, .cerrar__menu{
@@ -140,7 +145,7 @@ a{
     justify-content: center;
     align-items: center;
     position: relative;
-    gap: 10%;
+    gap: 40px;
 }
 
 .inicio_contenedor{
@@ -148,7 +153,6 @@ a{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 0 auto;
 }
 
 .wrapper {
@@ -156,7 +160,7 @@ a{
     place-content: center;
     background-color: var(--bg-color);
     font-family: "Oswald", sans-serif;
-    font-size: 8rem;
+    font-size: clamp(1.5rem, 8vw + 1.5rem ,8rem);
     font-weight: 700;
     text-transform: uppercase;
     color: var(--txt-color);
@@ -192,9 +196,11 @@ a{
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
+
 .inicio_links::after{
     content: "";
     width: 2px;
+    opacity: .6;
     height: 100px;
     background-color: var(--txt-color);
 }
@@ -204,9 +210,17 @@ a{
     transform: translateX(100px); 
 }
 
+.inicio_links a{
+    opacity: .6;
+    transition: opacity .3s ease;
+}
+
+.inicio_links a:hover{
+    opacity: 1;
+}
+
 .inicio_dager {
-    position: absolute;
-    left: 10%;
+    position: relative;
     width: 300px;
     height: 300px;
     background-color: #1d1e1d;
@@ -247,7 +261,7 @@ a{
 }
 
 .escribiendo {
-    font-size: 1.5rem;
+    font-size: clamp(.6rem, 1.5vw + .6rem ,1.5rem);
     font-weight: bold;
     color: var(--txt-color); 
     display: inline-block;
@@ -268,24 +282,28 @@ a{
 
 #carrusel_videos {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1000px;
     width: 100%;
     position: relative;
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
-    padding: 40px 0 80px 0;
+    padding: 40px 6px 80px 6px;
 }
 
 .carrusel_header{
     display: flex;
+    flex-direction: column;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
+
 .carrusel_header a{
-    color: var(--txt-color);
+    color: var(--color-decoration);
+    opacity: .8;
     display: flex;
+    align-items: center;
 }
 
 #carrusel_videos .carrusel{
@@ -394,6 +412,12 @@ a{
     gap: 6px;
     justify-self: center;
     align-self: center;
+    background-color:transparent;
+    transition: background-color .4s ease;
+}
+
+.video_footer a:hover{
+    background-color: var(--color-border);
 }
 
 .video_footer span{
@@ -404,56 +428,62 @@ a{
 
 /* SOBRE MÍ */
 
-#sobre_mi{
+#sobre_mi {
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
+    box-sizing: border-box;
+    padding: 20px 40px; 
 }
 
-.sobre_mi_header{
+.sobre_mi_header {
     max-width: 1200px;
-    margin-bottom: 80px;
-}
-
-.sobre_mi_header h2{
+    margin-bottom: 40px;
     text-align: center;
 }
 
-.sobre_mi_grid{
-    display: grid;
-    max-width: 1200px;
-    grid-template-columns: repeat(3, 250px);
-    grid-template-rows: repeat(2, 250px);
-    gap: 20px;
-    font-size: 1.2rem;
+.sobre_mi_header h2 {
+    text-align: center;
 }
 
-.sobre_mi_grid_item{
+.sobre_mi_grid {
+    display: grid;
+    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 300px)); 
+    grid-auto-rows:  250px;
+    gap: 20px;
+    font-size: 1rem;
+    justify-content: center;
+}
+
+.sobre_mi_grid_item {
     background-color: #1c1c2a;
     padding: 20px;
     border-radius: 8px;
     border: 2px solid var(--color-border);
     position: relative;
     cursor: pointer;
+    text-align: center;
 }
 
-.sobre_mi_grid_item header{
-    font-size: 1.8rem;
+.sobre_mi_grid_item header {
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding-bottom: 10px;
-    gap: 6px;
+    gap: 10px;
 }
 
-.sobre_mi_grid_item img{
+.sobre_mi_grid_item img {
     width: 40px;
 }
 
-.sobre_mi_grid_item:first-child{
+.sobre_mi_grid_item:first-child {
     background-color: transparent;
     display: flex;
     justify-content: center;
@@ -463,7 +493,6 @@ a{
     padding: 5px;
     margin: 0;
 }
-
 #pepinos{
     z-index: 2;
 }
@@ -517,7 +546,7 @@ a{
 /* COMUNIDAD */
 
 .comunidad{
-    width: 100vw;
+    width: 100%;
     height: 300px;
     display: flex;
     flex-direction: column;
@@ -526,6 +555,8 @@ a{
     align-items: center;
     background-color: var(--bg-color-contraste);
     gap: 10%;
+    box-sizing: border-box;
+    padding: 0 40px;
 }
 
 .comunidad p{
@@ -539,17 +570,22 @@ a{
     border-radius: 16px;
     padding: 8px 16px;
     border: none;
+    transition: background-color .4s ease;
+}
+
+.comunidad a:hover{
+    background-color: #5d2e96;
 }
 
 /* LAMBERJACK */
 
 #lamberjack{
     width: 100%;
-    height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
     padding: 50px;
+    box-sizing: border-box;
 }
 
 .lamberjack_contenedor{
@@ -560,6 +596,10 @@ a{
     max-width: 1200px;
     margin: 0 auto;
     gap: 20px;
+}
+
+.lamberjack_contenedor p{
+    text-align: center;
 }
 
 .lamberjack_juego {
@@ -649,6 +689,8 @@ a{
     justify-content: center;
     align-items: center;
     background-color: var(--bg-color-contraste);
+    padding: 0 40px;
+    box-sizing: border-box;
 }
 
 .contacto_contenedor{
@@ -666,7 +708,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5%;
+    gap: 8%;
 }
 
 .contacto_botones a{
@@ -676,9 +718,12 @@ a{
     border-radius: 16px;
     padding: 8px 16px;
     border: none;
+    transition: background-color .4s ease;
 }
 
-
+.contacto_botones a:hover{
+    background-color: #5d2e96;
+}
 
 /* FUNCIONALIDADES */
 
@@ -715,15 +760,15 @@ a{
     right: 20px;
     color: var(--txt-color);
     background-color: var(--color-decoration);
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     justify-content: center;
     align-items: center;
     border-radius: 100vmax;
 }
 
 .tooltip-container {
-    background: linear-gradient(138deg, rgba(3, 169, 244, 1) 15%, rgba(63, 180, 233, 1) 65%);
+    background-color: var(--txt-color);
     position: absolute;
     bottom: 60%;
     right: 20px;
@@ -733,8 +778,8 @@ a{
     border-radius: 100vmax;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     transition: background 0.6s;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
 }
 
 .tooltip-container:nth-child(2){
@@ -743,7 +788,7 @@ a{
 }
 
 .tooltip-container:hover {
-    background: #fff;
+    background: #e7e6e6;
 }
 
 .tooltip-container .text {
@@ -762,13 +807,12 @@ a{
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     transform: translate(-50%, -50%);
     opacity: 0;
     visibility: hidden;
-    background: #fff;
-    fill: #03a9f4;
+    background: var(--color-decoration);
     padding: 8px;
     border-radius: 100vmax;
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, background 0.3s ease;
@@ -777,6 +821,18 @@ a{
     align-items: center;
     justify-content: center;
     z-index: 1;
+}
+
+.tooltip img{
+    width: 30px;
+    height: 30px;
+    padding-top: 4px;
+}
+
+#tooltip_youtube img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100vmax;
 }
 
 .tooltip-container:hover .tooltip {
@@ -796,11 +852,23 @@ a{
 
 
 .tooltip:hover {
-    background: #03a9f4;
-    fill: #fff;
+    background: #5d2e96;
 }
 
 /* RESPONSIVE */
+
+@media (max-width: 1200px){
+    .inicio_dager{
+        width: 200px;
+        height: 200px;
+        border: 15px solid var(--txt-color);
+    }
+    
+    .inicio_dager::after{
+        width: 260px;
+        height: 260px;
+    }
+}
 
 @media screen and (max-width: 900px) {
 
@@ -835,7 +903,6 @@ a{
         z-index: 12;
     }
 
-
     .navegador_main.visible {
         right: 0;
         z-index: 120;
@@ -860,6 +927,35 @@ a{
     .navegador_link img {
         margin-bottom: 8px;
     }
+
+    .wrapper_nav{
+        font-size: 4rem;
+    }
+
+    .sobre_mi_header h2 {
+        font-size: 1.8rem;
+    }
+
+
+    .sobre_mi_grid_item header {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 750px) {
+
+    #inicio{
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 10%;
+    }
+
+
+
+    .lamberjack_juego{
+        width: 400px;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -867,8 +963,17 @@ a{
     #carrusel_videos .carrusel{
         grid-auto-columns: 100%;
     }
-    
+
 }
+
+@media screen and (max-width: 600px) {
+    .carrusel_header a {
+    
+        font-size: 14px;
+    }
+
+}
+
 
 /* ANIMACIONES */
 
