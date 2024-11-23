@@ -130,7 +130,7 @@ a{
 }
 
 .navegador_link:hover{
-    background-color: var(--color-border);
+    background-color: #323144;
 }
 
 .abrir__menu, .cerrar__menu{
@@ -1051,6 +1051,11 @@ mark{
         flex-direction: column;
         gap: 24px;
         align-items: center;
+    }
+
+    .navegador_link{
+        width: 150px;
+        justify-content: center;
     }
 
     .navegador_link img {
