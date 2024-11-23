@@ -1,3 +1,4 @@
+// Función para activar el pepino (ya existente)
 function activarPepino() {
     const pepino = document.getElementById('pepino');
     const gota1 = document.getElementById('gota1');
@@ -16,7 +17,6 @@ function activarPepino() {
         gota.style.width = '300px';
         gota.style.height = '300px';
     }, 500);
-
 
     setTimeout(() => {
         gota1.style.opacity = '0';
@@ -37,3 +37,31 @@ function activarPepino() {
         gota.style.visibility = 'hidden';
     }, 2000);
 }
+
+// Métodos para los otros artículos
+
+function activarGuitarras() {
+    alert("Haz hecho clic en Guitarras!");
+}
+
+function activarFilosofia() {
+    alert("Haz hecho clic en Filosofía!");
+}
+
+function activarGatos() {
+    alert("Haz hecho clic en Gatos!");
+}
+
+function activarFalopa() {
+    alert("Haz hecho clic en Falopa!");
+}
+
+// Asignar eventos de clic a los artículos
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('guitarras').addEventListener('click', activarGuitarras);
+    document.getElementById('pepinos').addEventListener('click', activarPepino);
+    document.getElementById('filosofia').addEventListener('click', activarFilosofia);
+    document.getElementById('gatos').addEventListener('click', activarGatos);
+    document.getElementById('falopa').addEventListener('click', activarFalopa);
+});

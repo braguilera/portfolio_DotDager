@@ -257,7 +257,7 @@ a{
 /* CARROUSEL */
 
 #carrusel_videos {
-    margin: 50px auto;
+    margin: 0 auto;
     max-width: 1200px;
     width: 100%;
     position: relative;
@@ -392,14 +392,11 @@ a{
 }
 
 
-
-
 /* SOBRE MÍ */
 
 #sobre_mi{
     width: 100%;
     height: 100vh;
-    padding-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -426,11 +423,12 @@ a{
 }
 
 .sobre_mi_grid_item{
-    background-color: var(--bg-color-grid);
+    background-color: #1c1c2a;
     padding: 20px;
     border-radius: 8px;
     border: 2px solid var(--color-border);
     position: relative;
+    cursor: pointer;
 }
 
 .sobre_mi_grid_item header{
@@ -438,22 +436,26 @@ a{
     display: flex;
     align-items: center;
     padding-bottom: 10px;
-    gap: 4px;
+    gap: 6px;
 }
 
 .sobre_mi_grid_item img{
-    width: 60px;
+    width: 40px;
 }
 
 .sobre_mi_grid_item:first-child{
     background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     border: none;
     padding: 5px;
     margin: 0;
 }
 
-.sobre_mi_grid_item:nth-child(2){
-    z-index: -2;
+#pepinos{
+    z-index: 2;
 }
 
 
@@ -529,6 +531,103 @@ a{
     border: none;
 }
 
+/* LAMBERJACK */
+
+#lamberjack{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 50px;
+}
+
+.lamberjack_contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.lamberjack_juego {
+    width: 600px;
+    height: 800px;
+    border-radius: 16px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(144, 72, 239, 0.144), 0 0 40px rgba(136, 72, 239, 0.164);
+}
+
+.lamberjack_juego::before {
+    content: "";
+    position: absolute;
+    width: 630px;
+    height: 830px;
+    border-radius: inherit;
+    background: rgba(72, 239, 128, 0.1);
+    box-shadow: 0 0 20px rgba(144, 72, 239, 0.144), 0 0 40px rgba(136, 72, 239, 0.164);
+    top: -15px;
+    left: -15px;
+    z-index: -1;
+}
+
+/* Oleaje encima del footer */
+
+.oleadas{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.ola{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(./imagenes/wave.png);
+    background-size: 1000px 100px;
+}
+
+.ola1{
+    animation: oleaje 30s linear infinite;
+    z-index: 9;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+
+.ola2{
+    animation: oleaje2 15s linear infinite;
+    z-index: 8;
+    opacity: .5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+
+.ola3{
+    animation: oleaje 30s linear infinite;
+    z-index: 7;
+    opacity: .2;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+
+.ola4{
+    animation: oleaje2 5s linear infinite;
+    z-index: 6;
+    opacity: .7;
+    animation-delay: -5s;
+    bottom: 20px;
+}
+
+
 /* CONTACTO */
 
 #contacto{
@@ -569,33 +668,7 @@ a{
     border: none;
 }
 
-/* LAMBERJACK */
 
-#lamberjack{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 50px;
-}
-
-.lamberjack_contenedor{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 20px;
-}
-
-.lamberjack_juego{
-    width: 600px;
-    height: 800px;
-    border-radius: 16px;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 100.5);
-}
 
 /* FUNCIONALIDADES */
 
@@ -616,6 +689,7 @@ a{
     bottom: 0;
     right: 3%;
     opacity: 0; 
+    z-index: 10;
     transform: translateX(100px);
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
@@ -755,5 +829,23 @@ a{
 @keyframes enganchar_nav{
     to{
         background-color:  var(--bg-color);
+    }
+}
+
+@keyframes oleaje{
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes oleaje2{
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: -1000px;
     }
 }
