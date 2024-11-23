@@ -1,67 +1,94 @@
-// Función para activar el pepino (ya existente)
 function activarPepino() {
     const pepino = document.getElementById('pepino');
     const gota1 = document.getElementById('gota1');
     const gota2 = document.getElementById('gota2');
     const gota3 = document.getElementById('gota3');
-    const gota = document.querySelector('.gota')
 
-    pepino.style.visibility = 'visible';
-    pepino.style.animation = 'temblor .8s infinite';
-    pepino.style.height = '300px';
-    pepino.style.width = '300px';
-    pepino.style.zIndex = '-1'
+    // Mostrar y animar el pepinos
+    pepino.style.bottom= '20%';
+    pepino.style.animation = 'temblor 1s infinite';
 
+    // Animación de gotas después de 1 segundo
     setTimeout(() => {
-        gota.style.visibility = 'visible';
-        gota.style.width = '300px';
-        gota.style.height = '300px';
-    }, 500);
-
-    setTimeout(() => {
-        gota1.style.opacity = '0';
-    }, 500);
-
-    setTimeout(() => {
-        gota2.style.opacity = '0';
+        [gota1, gota2, gota3].forEach((gota, index) => {
+            setTimeout(() => {
+                gota.style.visibility = 'visible';
+                gota.style.opacity = '1';
+                gota.style.width = '400px';
+                gota.style.height = '400px';
+            }, index * 300); // Las gotas aparecen escalonadas
+        });
     }, 1000);
 
-    setTimeout(() => {
-        gota3.style.opacity = '0';
-    }, 800);
-
+    // Ocultar todo después de 3 segundos
     setTimeout(() => {
         pepino.style.animation = '';
-        pepino.style.visibility = 'hidden';
-        pepino.style.transform = 'translateX(-50%)';
-        gota.style.visibility = 'hidden';
-    }, 2000);
+        pepino.style.bottom= '4px';
+
+        [gota1, gota2, gota3].forEach((gota) => {
+            gota.style.visibility = 'hidden';
+            gota.style.opacity = '0';
+            gota.style.width = '0';
+            gota.style.height = '0';
+        });
+    }, 3000);
 }
 
-// Métodos para los otros artículos
 
+function mostrarPopup(mensaje) {
+    // Crear elementos del popup
+    const overlay = document.createElement('div');
+    overlay.className = 'popup-overlay';
+
+    const popup = document.createElement('div');
+    popup.className = 'popup';
+
+    const texto = document.createElement('p');
+    texto.textContent = mensaje;
+
+    const boton = document.createElement('button');
+    boton.textContent = 'Cerrar';
+    boton.addEventListener('click', () => {
+        // Cerrar el popup
+        document.body.removeChild(overlay);
+        document.body.removeChild(popup);
+    });
+
+    // Agregar elementos al popup
+    popup.appendChild(texto);
+    popup.appendChild(boton);
+
+    // Agregar popup y overlay al body
+    document.body.appendChild(overlay);
+    document.body.appendChild(popup);
+
+    // Mostrar el popup y el overlay
+    overlay.style.display = 'block';
+    popup.style.display = 'block';
+}
+
+// Funciones para cada categoría con chistes personalizados
 function activarGuitarras() {
-    alert("Haz hecho clic en Guitarras!");
+    mostrarPopup("¿Qué tienen en común las guitarras y los pitos? Ambos suenan mejor cuando los tocas con pasión.");
 }
 
 function activarFilosofia() {
-    alert("Haz hecho clic en Filosofía!");
+    mostrarPopup("La filosofía y los pitos tienen algo en común: mientras más los piensas, menos los entiendes.");
 }
 
 function activarGatos() {
-    alert("Haz hecho clic en Gatos!");
+    mostrarPopup("¿Por qué los gatos son como los pitos? Siempre están donde no los necesitas, pero nunca puedes ignorarlos.");
 }
 
 function activarFalopa() {
-    alert("Haz hecho clic en Falopa!");
+    mostrarPopup("La falopa y los pitos comparten algo: ambos pueden hacer que pierdas el control si abusas de ellos.");
 }
 
 // Asignar eventos de clic a los artículos
-
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('guitarras').addEventListener('click', activarGuitarras);
-    document.getElementById('pepinos').addEventListener('click', activarPepino);
     document.getElementById('filosofia').addEventListener('click', activarFilosofia);
     document.getElementById('gatos').addEventListener('click', activarGatos);
     document.getElementById('falopa').addEventListener('click', activarFalopa);
+    document.getElementById('pepinos').addEventListener('click',activarPepino);
 });

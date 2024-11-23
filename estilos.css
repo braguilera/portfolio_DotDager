@@ -90,6 +90,8 @@ a{
     font-weight: 700;
     text-transform: uppercase;
     color: var(--txt-color);
+    cursor: pointer;
+    user-select: none;
 }
 
 .wrapper_nav > div {
@@ -164,6 +166,7 @@ a{
     font-weight: 700;
     text-transform: uppercase;
     color: var(--txt-color);
+    user-select: none;
 }
 
 .wrapper > div {
@@ -287,7 +290,7 @@ a{
     position: relative;
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
-    padding: 40px 6px 80px 6px;
+    padding: 80px 6px 80px 6px;
 }
 
 .carrusel_header{
@@ -297,7 +300,6 @@ a{
     justify-content: center;
     align-items: center;
 }
-
 
 .carrusel_header a{
     color: var(--color-decoration);
@@ -438,7 +440,7 @@ a{
     align-items: center;
     position: relative;
     box-sizing: border-box;
-    padding: 20px 40px; 
+    padding: 80px 40px; 
 }
 
 .sobre_mi_header {
@@ -496,17 +498,15 @@ a{
 }
 #pepinos{
     z-index: 2;
+    position: relative;
 }
-
-
 .pepino {
-    width: 0;
-    height: 70%;
+    width: 150px;
+    height: 300px;
     position: absolute;
-    bottom: 60%;
+    bottom: 4px;
     left: 50%;
     transform: translateX(-50%);
-    visibility: hidden;
     transition: all 0.3s ease;
     z-index: 1;
     background-image: url(/iconos/pepino.svg);
@@ -514,7 +514,6 @@ a{
     background-size: contain;
     background-position: center;
 }
-
 
 .gota {
     position: absolute;
@@ -524,25 +523,76 @@ a{
     width: 0;
     height: 0;
     visibility: hidden;
-    transition: opacity 2s, width 2s, height 2s;
+    opacity: 0;
     background-image: url(/iconos/leche.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    z-index: 4;
+    transition: opacity .4s ease;
 }
 
-#gota1{
-    top: 70%;
-    left: 70%;
+#gota1 {
+    transform: translate(-80%, -50%);
 }
-#gota2{
-    top: 20%;
-    left: 100%;
+
+#gota2 {
+    transform: translate(-20%, -60%);
 }
-#gota3{
+
+#gota3 {
+    transform: translate(-50%, -20%);
+}
+
+
+/* Estilos del popup */
+.popup {
+    position: fixed;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1c1c2a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none; /* Oculto por defecto */
+    max-width: 400px;
+    text-align: center;
+    color: #fff;
 }
+
+.popup p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.popup button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff5e57;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.popup button:hover {
+    background-color: #ff3d33;
+}
+
+/* Fondo oscuro detrás del popup */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: none; /* Oculto por defecto */
+}
+
 
 /* COMUNIDAD */
 
@@ -587,6 +637,7 @@ a{
     position: relative;
     padding: 50px;
     box-sizing: border-box;
+    padding-top: 80px;
 }
 
 .lamberjack_contenedor{
