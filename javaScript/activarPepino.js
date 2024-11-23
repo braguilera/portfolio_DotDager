@@ -4,7 +4,7 @@ function activarPepino() {
     const gota2 = document.getElementById('gota2');
     const gota3 = document.getElementById('gota3');
 
-    pepino.style.bottom= '20%';
+    pepino.style.bottom= '22%';
     pepino.style.animation = 'temblor 1s infinite';
     pepino.style.opacity = '1';
 

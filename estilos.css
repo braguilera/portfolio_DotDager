@@ -978,6 +978,14 @@ mark{
     }
 }
 
+@media (max-width: 1035px){
+    .pepino {
+        left: 30%;
+        transform: translateX(-30%);
+    }
+
+}
+
 @media screen and (max-width: 900px) {
 
     #carrusel_videos .carrusel{
@@ -1048,6 +1056,10 @@ mark{
     .sobre_mi_grid_item header {
         font-size: 1.2rem;
     }
+
+
+
+
 }
 
 @media screen and (max-width: 750px) {
@@ -1058,12 +1070,18 @@ mark{
         padding-left: 10%;
     }
 
-
-
     .lamberjack_juego{
         width: 400px;
     }
 
+}
+
+@media screen and (max-width: 715px) {
+
+    .pepino {
+        left: 50%;
+        bottom: 70%;
+    }
 }
 
 @media screen and (max-width: 600px) {
