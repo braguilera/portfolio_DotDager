@@ -48,6 +48,9 @@ function mostrarPopup(mensaje) {
     const texto = document.createElement('p');
     texto.textContent = mensaje;
 
+    const divJumpScare = document.createElement('div')
+    divJumpScare.className = 'contenedor_jumpscare'
+
     const boton = document.createElement('button');
     boton.textContent = 'Cerrar';
     boton.addEventListener('click', () => {
@@ -55,7 +58,15 @@ function mostrarPopup(mensaje) {
         document.body.removeChild(popup);
     });
 
+
+
     popup.appendChild(texto);
+    
+    if (mensaje === "AAAAAAAAAAAAAHH!!!!") {
+        popup.classList.add('jumpscare');
+        popup.appendChild(divJumpScare);
+    }
+
     popup.appendChild(boton);
 
     document.body.appendChild(overlay);
@@ -81,11 +92,16 @@ function activarFalopa() {
     mostrarPopup("La falopa y los pitos comparten algo: ambos pueden hacer que pierdas el control si abusas de ellos.");
 }
 
+function activarJumpscare() {
+    mostrarPopup("AAAAAAAAAAAAAHH!!!!");
+}
+
 // Asignar eventos de clic a los artículos
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('guitarras').addEventListener('click', activarGuitarras);
     document.getElementById('filosofia').addEventListener('click', activarFilosofia);
     document.getElementById('gatos').addEventListener('click', activarGatos);
     document.getElementById('falopa').addEventListener('click', activarFalopa);
+    document.getElementById('jumpscare').addEventListener('click', activarJumpscare)
     document.getElementById('pepinos').addEventListener('click',activarPepino);
 });

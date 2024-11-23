@@ -525,7 +525,15 @@ a{
     border: none;
     padding: 5px;
     margin: 0;
-    cursor: default;
+}
+
+.contenedor_jumpscare{
+    width: 300px;
+    height: 200px;
+    background-image: url(/imagenes/pala.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #pepinos{
@@ -810,6 +818,11 @@ a{
 }
 
 /* FUNCIONALIDADES */
+
+mark{
+    background-color: transparent;
+    color: var(--color-decoration);
+}
 
 .ola__blur{
     position: absolute;
